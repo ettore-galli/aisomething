@@ -1,4 +1,4 @@
-# UNIVERSAL-ETL
+# AI SOMETHING
 
 A demo-model for an all-purpose etl.
 
@@ -6,7 +6,7 @@ A demo-model for an all-purpose etl.
 
 Versioning with [tool.setuptools.dynamic]
 This project uses dynamic versioning via the [tool.setuptools.dynamic] section in pyproject.toml.
-The version is read from the __version__ attribute in the universal_etl package.
+The version is read from the __version__ attribute in the aisomething package.
 
 How it works
 
@@ -18,7 +18,7 @@ How it works
 
 Example:
 
-    # universal_etl/__init__.py
+    # aisomething/__init__.py
     __version__ = "1.2.3"
 
 Release workflow

@@ -17,9 +17,9 @@ install: update-tools
 	pip install -r requirements-build.txt
 
 lint:
-	black universal_etl/ tests/ demo/
-	ruff check universal_etl/ tests/ demo/
-	mypy universal_etl/ tests/ demo/
+	black aisomething/ tests/ 
+	ruff check aisomething/ tests/ 
+	mypy aisomething/ tests/ 
 
 test:
 	pytest tests

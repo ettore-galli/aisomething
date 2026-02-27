@@ -5,7 +5,7 @@
 #    pip-compile --extra=format --output-file=requirements-format.txt pyproject.toml
 #
 black==26.1.0
-    # via universal_etl (pyproject.toml)
+    # via aisomething (pyproject.toml)
 click==8.3.1
     # via black
 mypy-extensions==1.1.0
@@ -19,6 +19,6 @@ platformdirs==4.7.0
 pytokens==0.4.1
     # via black
 sqlalchemy==2.0.46
-    # via universal_etl (pyproject.toml)
+    # via aisomething (pyproject.toml)
 typing-extensions==4.15.0
     # via sqlalchemy

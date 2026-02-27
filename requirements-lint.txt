@@ -19,7 +19,7 @@ filelock==3.21.2
 librt==0.8.0
     # via mypy
 mypy==1.19.1
-    # via universal_etl (pyproject.toml)
+    # via aisomething (pyproject.toml)
 mypy-extensions==1.1.0
     # via mypy
 packaging==26.0
@@ -37,11 +37,11 @@ pluggy==1.6.0
 pyproject-api==1.10.0
     # via tox
 ruff==0.15.1
-    # via universal_etl (pyproject.toml)
+    # via aisomething (pyproject.toml)
 sqlalchemy==2.0.46
-    # via universal_etl (pyproject.toml)
+    # via aisomething (pyproject.toml)
 tox==4.35.0
-    # via universal_etl (pyproject.toml)
+    # via aisomething (pyproject.toml)
 typing-extensions==4.15.0
     # via
     #   mypy

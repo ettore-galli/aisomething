@@ -9,11 +9,11 @@ dependencies = [
 description = "General Purpose ETL"
 dynamic = ["version"]
 license = {file = "LICENSE"}
-name = "universal_etl"
+name = "aisomething"
 readme = "README.md"
 
 [tool.setuptools.dynamic]
-version = {attr = "universal_etl.__version__"}
+version = {attr = "aisomething.__version__"}
 
 [project.optional-dependencies]
 build = ["build"]
@@ -33,7 +33,7 @@ test = [
 ]
 
 [tool.setuptools]
-packages = ["universal_etl"]
+packages = ["aisomething"]
 
 [tool.setuptools_scm]
 
