@@ -1,0 +1,6 @@
+CREATE TABLE customer (
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    model_id VARCHAR(255) NOT NULL,
+    descr VARCHAR(512),
+    PRIMARY KEY (id)
+);

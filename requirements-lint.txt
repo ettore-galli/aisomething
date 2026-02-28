@@ -4,6 +4,8 @@
 #
 #    pip-compile --extra=lint --output-file=requirements-lint.txt pyproject.toml
 #
+annotated-types==0.7.0
+    # via pydantic
 cachetools==7.0.1
     # via tox
 chardet==5.2.0
@@ -34,8 +36,16 @@ platformdirs==4.7.0
     #   virtualenv
 pluggy==1.6.0
     # via tox
+pydantic==2.12.5
+    # via pydantic-settings
+pydantic-core==2.41.5
+    # via pydantic
+pydantic-settings==2.13.1
+    # via aisomething (pyproject.toml)
 pyproject-api==1.10.0
     # via tox
+python-dotenv==1.2.1
+    # via pydantic-settings
 ruff==0.15.1
     # via aisomething (pyproject.toml)
 sqlalchemy==2.0.46
@@ -45,6 +55,13 @@ tox==4.35.0
 typing-extensions==4.15.0
     # via
     #   mypy
+    #   pydantic
+    #   pydantic-core
     #   sqlalchemy
+    #   typing-inspection
+typing-inspection==0.4.2
+    # via
+    #   pydantic
+    #   pydantic-settings
 virtualenv==20.36.1
     # via tox

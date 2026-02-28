@@ -4,10 +4,12 @@
 #
 #    pip-compile --extra=test --output-file=requirements-test.txt pyproject.toml
 #
+annotated-types==0.7.0
+    # via pydantic
 coverage[toml]==7.13.4
     # via
-    #   pytest-cov
     #   aisomething (pyproject.toml)
+    #   pytest-cov
 iniconfig==2.3.0
     # via pytest
 packaging==26.0
@@ -16,20 +18,36 @@ pluggy==1.6.0
     # via
     #   pytest
     #   pytest-cov
+pydantic==2.12.5
+    # via pydantic-settings
+pydantic-core==2.41.5
+    # via pydantic
+pydantic-settings==2.13.1
+    # via aisomething (pyproject.toml)
 pygments==2.19.2
     # via pytest
 pytest==9.0.2
     # via
+    #   aisomething (pyproject.toml)
     #   pytest-cov
     #   pytest-sugar
-    #   aisomething (pyproject.toml)
 pytest-cov==7.0.0
     # via aisomething (pyproject.toml)
 pytest-sugar==1.1.1
     # via aisomething (pyproject.toml)
+python-dotenv==1.2.1
+    # via pydantic-settings
 sqlalchemy==2.0.46
     # via aisomething (pyproject.toml)
 termcolor==3.3.0
     # via pytest-sugar
 typing-extensions==4.15.0
-    # via sqlalchemy
+    # via
+    #   pydantic
+    #   pydantic-core
+    #   sqlalchemy
+    #   typing-inspection
+typing-inspection==0.4.2
+    # via
+    #   pydantic
+    #   pydantic-settings

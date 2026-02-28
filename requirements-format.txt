@@ -4,6 +4,8 @@
 #
 #    pip-compile --extra=format --output-file=requirements-format.txt pyproject.toml
 #
+annotated-types==0.7.0
+    # via pydantic
 black==26.1.0
     # via aisomething (pyproject.toml)
 click==8.3.1
@@ -16,9 +18,25 @@ pathspec==1.0.4
     # via black
 platformdirs==4.7.0
     # via black
+pydantic==2.12.5
+    # via pydantic-settings
+pydantic-core==2.41.5
+    # via pydantic
+pydantic-settings==2.13.1
+    # via aisomething (pyproject.toml)
+python-dotenv==1.2.1
+    # via pydantic-settings
 pytokens==0.4.1
     # via black
 sqlalchemy==2.0.46
     # via aisomething (pyproject.toml)
 typing-extensions==4.15.0
-    # via sqlalchemy
+    # via
+    #   pydantic
+    #   pydantic-core
+    #   sqlalchemy
+    #   typing-inspection
+typing-inspection==0.4.2
+    # via
+    #   pydantic
+    #   pydantic-settings
