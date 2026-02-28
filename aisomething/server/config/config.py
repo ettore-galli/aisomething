@@ -1,41 +1,36 @@
 import os
+from typing import ClassVar
 
 from pydantic import Field
 from pydantic_settings import (
     BaseSettings,
-    DotEnvSettingsSource,
-    PydanticBaseSettingsSource,
+    SettingsConfigDict,
 )
 
 
-class ServerConfig(BaseSettings):
-    app_title: str = Field(alias="APP_TITLE")
-    db_connection_string: str = Field(alias="DB_CONNECTION")
-
-    @classmethod
-    def settings_customise_sources(
-        cls,
-        settings_cls: type[BaseSettings],
-        init_settings: PydanticBaseSettingsSource,
-        env_settings: PydanticBaseSettingsSource,
-        dotenv_settings: PydanticBaseSettingsSource,
-        file_secret_settings: PydanticBaseSettingsSource,
-    ) -> tuple[PydanticBaseSettingsSource, ...]:
-        _ = settings_cls, dotenv_settings
-
-        custom_dotenv = DotEnvSettingsSource(
-            settings_cls, env_file=os.environ.get("CONFIG_ENV_FILE", ".env")
-        )
-
-        return (
-            init_settings,
-            env_settings,
-            custom_dotenv,
-            file_secret_settings,
-        )
+class TemplateConfig(BaseSettings):
+    ENV_FILE_ENVVAR_NAME: ClassVar[str] = "ENV_FILE"
+    model_config = SettingsConfigDict(
+        case_sensitive=False,
+        env_nested_delimiter="__",
+    )
 
 
-def retrieve_config(env_file: str | None = None) -> ServerConfig:
-    if env_file:
-        os.environ["CONFIG_ENV_FILE"] = env_file
-    return ServerConfig()  # type: ignore[call-arg]
+class GeneralConfig(TemplateConfig):
+    app_title: str = Field()
+    app_description: str = Field()
+
+
+class DatabaseConfig(TemplateConfig):
+    db_connection_string: str = Field()
+
+
+class ServerConfig(TemplateConfig):
+    general: GeneralConfig = Field()
+    database: DatabaseConfig = Field()
+
+
+def retrieve_config(env_prefix: str | None = None) -> ServerConfig:
+    prefix = env_prefix or ""
+    env_file = os.environ.get(f"{prefix}{ServerConfig.ENV_FILE_ENVVAR_NAME}")
+    return ServerConfig(_env_prefix=prefix, _env_file=env_file)  # type: ignore[call-arg]
