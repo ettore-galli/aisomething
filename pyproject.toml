@@ -4,6 +4,7 @@ requires = ["setuptools >= 70.1"]
 
 [project]
 dependencies = [
+  "fastapi[standard]==0.134.0",
   "pydantic-settings==2.13.1",
   "sqlalchemy==2.0.46",
 ]
