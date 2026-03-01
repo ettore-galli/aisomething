@@ -12,6 +12,6 @@ def respond_to_user(request: ChatRequest) -> ChatResponse:
         chat_request=ChatServiceRequest(user_propmt=request.user_propmt)
     )
     return ChatResponse(
-        chatbotResponseBody=response.chatbot_response_body,
-        confidenceLevel=response.confidence_level,
+        chatbot_response_body=response.chatbot_response_body,
+        confidence_level=response.confidence_level,
     )
