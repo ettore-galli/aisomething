@@ -1,10 +1,9 @@
 import pytest
-from aisomething.server.config.config import DatabaseConfig, GeneralConfig, ServerConfig
+from aisomething.server.config.config import ServerConfig
+
+from tests.aisomething.tests_base import TESTS_SERVER_CONFIG
 
 
 @pytest.fixture
 def server_config() -> ServerConfig:
-    return ServerConfig(
-        general=GeneralConfig(app_title="Title", app_description="Descr"),
-        database=DatabaseConfig(db_connection_string="my test connection string"),
-    )
+    return TESTS_SERVER_CONFIG
